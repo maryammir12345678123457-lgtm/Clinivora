@@ -65,4 +65,41 @@ ADMIN **Reports** includes:
 - Routine Queue, Doctors, Reports, User Accounts
 - Audit Log, DSA Laboratory, Change Password
 
-## Who can edit /
+## Team Members
+
+Clinivora is a collaborative group project developed by a team of four members.
+
+| Name | Role |
+|---|---|
+| Mir Maryam Naveed | Team Leader |
+| Seeam Sajim | Team Member |
+| Tashnova Nupur | Team Member |
+| Aminjon | Team Member |
+## Who Can Edit / Delete
+
+| Action | ADMIN | TRIAGE | RECEPTION | DOCTOR |
+|---|:---:|:---:|:---:|:---:|
+| Register patient | ✓ | — | ✓ | — |
+| Edit patient demographics | ✓ | ✓ | ✓ | — |
+| Soft-delete patient | ✓ | — | — | — |
+| Restore patient | ✓ | — | — | — |
+| Edit case chief complaint | ✓ | ✓ | — | — |
+| Add clinical notes | ✓ | ✓ | — | ✓ |
+| Soft-deactivate doctor | ✓ | — | — | — |
+| Manage user accounts | ✓ | — | — | — |
+| View audit log / reports | ✓ | — | — | — |
+| Change own password | ✓ | ✓ | ✓ | ✓ |
+
+## Documentation
+
+- Architecture
+- Acceptance checklist
+- DSA reference
+
+## Security
+
+Use synthetic patient data for demonstrations. Never commit real patient information, passwords, API keys, or database credentials.
+
+## Project Status
+
+Java desktop healthcare management project under development.
