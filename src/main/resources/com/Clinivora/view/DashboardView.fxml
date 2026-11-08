@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+
+<ScrollPane fx:controller="com.Clinivora.ui.DashboardController"
+            fitToWidth="true"
+            hbarPolicy="NEVER"
+            styleClass="dashboard-scroll"
+            xmlns:fx="http://javafx.com/fxml">
+    <VBox spacing="16" styleClass="dashboard-root">
+        <padding>
+            <Insets top="4" right="4" bottom="8" left="4"/>
+        </padding>
+
+        <!-- Hero -->
+        <HBox spacing="16" alignment="CENTER_LEFT" styleClass="dashboard-hero">
+            <VBox spacing="4" HBox.hgrow="ALWAYS">
+                <Label fx:id="greetingLabel" styleClass="dashboard-greeting"/>
+                <HBox spacing="10" alignment="CENTER_LEFT">
+                    <Label fx:id="floorChip" styleClass="floor-chip, floor-steady"/>
+                    <Label fx:id="welcomeLabel" styleClass="subtitle"/>
+                </HBox>
+            </VBox>
+            <VBox spacing="6" alignment="CENTER_RIGHT">
+                <Label fx:id="refreshedLabel" styleClass="muted"/>
+                <Button fx:id="refreshButton" text="Refresh" styleClass="secondary-button" onAction="#onRefresh"/>
+            </VBox>
+        </HBox>
+
+        <!-- KPI row -->
+        <HBox fx:id="kpiRow" spacing="12" styleClass="kpi-row"/>
+
+        <!-- Charts -->
+        <GridPane hgap="12" vgap="12">
+            <columnConstraints>
+                <ColumnConstraints percentWidth="38" hgrow="ALWAYS"/>
+                <ColumnConstraints percentWidth="62" hgrow="ALWAYS"/>
+            </columnConstraints>
+            <VBox styleClass="card, chart-panel" spacing="6" GridPane.columnIndex="0">
+                <Label fx:id="esiTitleLabel" text="ESI mix (open)" styleClass="section-title"/>
+                <Label fx:id="esiHintLabel" styleClass="muted"/>
+                <PieChart fx:id="esiPie" prefHeight="240" legendVisible="true" styleClass="chart"/>
+            </VBox>
+            <VBox styleClass="card, chart-panel" spacing="6" GridPane.columnIndex="1">
+                <Label fx:id="arrivalsTitleLabel" text="Arrivals · last 7 days" styleClass="section-title"/>
+                <Label fx:id="arrivalsHintLabel" styleClass="muted"/>
+                <BarChart fx:id="arrivalsBar" prefHeight="240" legendVisible="false" styleClass="chart"
+                          animated="false">
+                    <xAxis>
+                        <CategoryAxis fx:id="arrivalsXAxis" label=""/>
+                    </xAxis>
+                    <yAxis>
+                        <NumberAxis fx:id="arrivalsYAxis" label="" minorTickVisible="false"/>
+                    </yAxis>
+                </BarChart>
+            </VBox>
+        </GridPane>
+
+        <!-- Bottom: waits + pipeline + actions -->
+        <GridPane hgap="12" vgap="12">
+            <columnConstraints>
+                <ColumnConstraints percentWidth="34" hgrow="ALWAYS"/>
+                <ColumnConstraints percentWidth="66" hgrow="ALWAYS"/>
+            </columnConstraints>
+
+            <VBox styleClass="card" spacing="10" GridPane.columnIndex="0">
+                <Label fx:id="waitsTitleLabel" text="Longest waits" styleClass="section-title"/>
+                <VBox fx:id="waitsList" spacing="8" styleClass="waits-list"/>
+            </VBox>
+
+            <VBox styleClass="card" spacing="10" GridPane.columnIndex="1">
+                <HBox spacing="10" alignment="CENTER_LEFT">
+                    <Label fx:id="pipelineTitleLabel" text="Open pipeline" styleClass="section-title"/>
+                    <Region HBox.hgrow="ALWAYS"/>
+                    <Label fx:id="pipelineCountLabel" styleClass="muted"/>
+                </HBox>
+                <TableView fx:id="pipelineTable" prefHeight="220" styleClass="dashboard-table">
+                    <columns>
+                        <TableColumn fx:id="colCode" text="Case" prefWidth="90"/>
+                        <TableColumn fx:id="colPatient" text="Patient" prefWidth="140"/>
+                        <TableColumn fx:id="colStatus" text="Status" prefWidth="110"/>
+                        <TableColumn fx:id="colEsi" text="ESI" prefWidth="60"/>
+                        <TableColumn fx:id="colWait" text="Wait" prefWidth="70"/>
+                    </columns>
+                </TableView>
+            </VBox>
+        </GridPane>
+
+        <VBox spacing="8" styleClass="card, quick-actions-panel">
+            <Label fx:id="actionsTitleLabel" text="Quick actions" styleClass="section-title"/>
+            <HBox fx:id="actionsRow" spacing="10" styleClass="quick-actions"/>
+        </VBox>
+    </VBox>
+</ScrollPane>

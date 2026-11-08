@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox fx:controller="com.Clinivora.ui.CaseDetailController"
+      spacing="10"
+      xmlns:fx="http://javafx.com/fxml">
+    <HBox spacing="8">
+        <Button text="Back to ER" styleClass="secondary-button" onAction="#onBack"/>
+    </HBox>
+    <VBox styleClass="card" spacing="6">
+        <HBox spacing="8" alignment="CENTER_LEFT">
+            <Label fx:id="caseCodeLabel" styleClass="section-title"/>
+            <Label fx:id="statusChip" styleClass="status-chip, chip-neutral"/>
+            <Label fx:id="priorityChip"/>
+        </HBox>
+        <Label fx:id="caseMetaLabel" wrapText="true"/>
+        <Label fx:id="triageLabel" styleClass="muted" wrapText="true"/>
+        <HBox fx:id="complaintBox" spacing="8" alignment="CENTER_LEFT">
+            <TextField fx:id="complaintField" promptText="Chief complaint" HBox.hgrow="ALWAYS"/>
+            <Button fx:id="saveComplaintButton" text="Save complaint" styleClass="secondary-button" onAction="#onSaveComplaint"/>
+        </HBox>
+    </VBox>
+    <HBox spacing="8" alignment="CENTER_LEFT">
+        <ComboBox fx:id="doctorBox" prefWidth="260" promptText="Select doctor"/>
+        <Button text="Assign" styleClass="primary-button" onAction="#onAssign"/>
+        <Button text="Start treatment" styleClass="secondary-button" onAction="#onStartTreatment"/>
+        <Button text="Close case" styleClass="danger-button" onAction="#onCloseCase"/>
+    </HBox>
+    <HBox spacing="12">
+        <VBox spacing="6" HBox.hgrow="ALWAYS">
+            <Label text="Clinical notes" styleClass="section-title"/>
+            <TextArea fx:id="noteArea" prefRowCount="3" promptText="Add clinical note"/>
+            <Button fx:id="addNoteButton" text="Add note" styleClass="primary-button" onAction="#onAddNote"/>
+            <ListView fx:id="notesList" prefHeight="160"/>
+        </VBox>
+        <VBox spacing="6" HBox.hgrow="ALWAYS">
+            <Label text="Case timeline" styleClass="section-title"/>
+            <ListView fx:id="timelineList" prefHeight="220"/>
+        </VBox>
+    </HBox>
+</VBox>

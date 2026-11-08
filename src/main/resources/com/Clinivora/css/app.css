@@ -1,0 +1,538 @@
+/* Clinivora — Google Admin / Material 3 light portal */
+
+.root {
+    -g-primary: #0B57D0;
+    -g-primary-hover: #0842A0;
+    -g-primary-soft: #D3E3FD;
+    -g-link: #1A73E8;
+    -g-canvas: #F0F4F9;
+    -g-surface: #FFFFFF;
+    -g-border: #DADCE0;
+    -g-text: #1F1F1F;
+    -g-muted: #5F6368;
+    -g-danger: #B3261E;
+    -g-success: #137333;
+    -g-warn: #E37400;
+    -g-sidebar: #FFFFFF;
+    -g-nav-hover: #E8EAED;
+    -g-input-bg: #FFFFFF;
+    -fx-font-family: "Roboto", "Segoe UI", sans-serif;
+    -fx-font-size: 13px;
+    -fx-background-color: -g-canvas;
+    -fx-text-fill: -g-text;
+}
+
+.root-pane, .main-shell {
+    -fx-background-color: linear-gradient(to bottom, #E8F0FE 0%, -g-canvas 28%, -g-canvas 100%);
+}
+
+.shell-center {
+    -fx-background-color: transparent;
+}
+
+.sidebar {
+    -fx-background-color: -g-sidebar;
+    -fx-pref-width: 248;
+    -fx-min-width: 228;
+    -fx-padding: 14 12 14 12;
+    -fx-border-color: transparent -g-border transparent transparent;
+    -fx-border-width: 0 1 0 0;
+    -fx-effect: dropshadow(gaussian, rgba(60,64,67,0.1), 14, 0.12, 2, 0);
+}
+
+.brand-box {
+    -fx-alignment: CENTER_LEFT;
+    -fx-spacing: 12;
+    -fx-padding: 6 8 16 8;
+}
+
+.brand-mark {
+    -fx-background-color: -g-primary-soft;
+    -fx-background-radius: 12;
+    -fx-padding: 6;
+    -fx-min-width: 48;
+    -fx-min-height: 48;
+    -fx-alignment: CENTER;
+}
+
+.brand-title {
+    -fx-font-family: "Roboto Medium", "Roboto", sans-serif;
+    -fx-font-size: 19px;
+    -fx-text-fill: -g-text;
+}
+
+.brand-sub {
+    -fx-font-size: 11px;
+    -fx-text-fill: -g-muted;
+}
+
+.nav-section-label {
+    -fx-font-size: 10.5px;
+    -fx-font-family: "Roboto Medium", "Roboto", sans-serif;
+    -fx-text-fill: -g-muted;
+    -fx-padding: 10 14 4 14;
+}
+
+.nav-separator {
+    -fx-padding: 8 6 8 6;
+    -fx-opacity: 0.55;
+}
+
+.nav-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: #3C4043;
+    -fx-alignment: CENTER_LEFT;
+    -fx-padding: 10 14 10 14;
+    -fx-background-radius: 22;
+    -fx-cursor: hand;
+    -fx-font-size: 13px;
+    -fx-font-family: "Roboto", sans-serif;
+}
+
+.nav-button:hover {
+    -fx-background-color: -g-nav-hover;
+    -fx-text-fill: -g-text;
+}
+
+.nav-button.active {
+    -fx-background-color: -g-primary-soft;
+    -fx-text-fill: -g-primary;
+    -fx-font-family: "Roboto Medium", "Roboto", sans-serif;
+}
+
+.nav-logout {
+    -fx-text-fill: -g-danger;
+}
+
+.topbar {
+    -fx-background-color: rgba(255,255,255,0.88);
+    -fx-border-color: transparent transparent -g-border transparent;
+    -fx-border-width: 0 0 1 0;
+    -fx-padding: 14 22 14 22;
+}
+
+.page-title {
+    -fx-font-size: 22px;
+    -fx-font-family: "Roboto Medium", "Roboto", sans-serif;
+    -fx-text-fill: -g-text;
+}
+
+.page-hint {
+    -fx-font-size: 12px;
+    -fx-text-fill: -g-muted;
+}
+
+.topbar-clock {
+    -fx-font-size: 12px;
+    -fx-text-fill: -g-muted;
+    -fx-font-family: "Roboto Medium", "Roboto", sans-serif;
+}
+
+.topbar-role-chip {
+    -fx-background-color: -g-primary-soft;
+    -fx-text-fill: -g-primary;
+    -fx-background-radius: 14;
+    -fx-padding: 4 12 4 12;
+    -fx-font-size: 11px;
+    -fx-font-family: "Roboto Medium", "Roboto", sans-serif;
+}
+
+.topbar-user {
+    -fx-text-fill: -g-text;
+    -fx-font-size: 13px;
+    -fx-font-family: "Roboto Medium", "Roboto", sans-serif;
+}
+
+.subtitle, .muted {
+    -fx-text-fill: -g-muted;
+    -fx-font-size: 12px;
+}
+
+.content-area {
+    -fx-padding: 18 20 22 20;
+    -fx-background-color: transparent;
+}
+
+.card, .panel {
+    -fx-background-color: -g-surface;
+    -fx-background-radius: 14;
+    -fx-border-color: transparent;
+    -fx-border-radius: 14;
+    -fx-padding: 14 16 14 16;
+    -fx-effect: dropshadow(gaussian, rgba(60,64,67,0.12), 12, 0.12, 0, 1);
+}
+
+.stat-card {
+    -fx-background-color: -g-surface;
+    -fx-background-radius: 14;
+    -fx-padding: 14 16 14 16;
+    -fx-pref-width: 160;
+    -fx-min-width: 140;
+    -fx-effect: dropshadow(gaussian, rgba(60,64,67,0.12), 10, 0.1, 0, 1);
+}
+
+.stat-value {
+    -fx-font-size: 24px;
+    -fx-font-family: "Roboto Medium", "Roboto", sans-serif;
+    -fx-text-fill: -g-primary;
+}
+
+.stat-label {
+    -fx-text-fill: -g-muted;
+    -fx-font-size: 11.5px;
+}
+
+.button, .primary-button {
+    -fx-background-color: -g-primary;
+    -fx-text-fill: white;
+    -fx-background-radius: 20;
+    -fx-padding: 8 18 8 18;
+    -fx-cursor: hand;
+    -fx-font-family: "Roboto Medium", "Roboto", sans-serif;
+    -fx-font-size: 13px;
+}
+
+.button:hover, .primary-button:hover {
+    -fx-background-color: -g-primary-hover;
+}
+
+.secondary-button {
+    -fx-background-color: -g-primary-soft;
+    -fx-text-fill: -g-primary;
+    -fx-background-radius: 20;
+    -fx-padding: 8 16 8 16;
+    -fx-cursor: hand;
+    -fx-font-family: "Roboto Medium", "Roboto", sans-serif;
+}
+
+.secondary-button:hover {
+    -fx-background-color: #C2D7FC;
+}
+
+.danger-button {
+    -fx-background-color: -g-danger;
+    -fx-text-fill: white;
+    -fx-background-radius: 20;
+    -fx-padding: 8 16 8 16;
+    -fx-cursor: hand;
+    -fx-font-family: "Roboto Medium", "Roboto", sans-serif;
+}
+
+.danger-button:hover {
+    -fx-background-color: #8C1D18;
+}
+
+.ghost-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: -g-link;
+    -fx-border-color: transparent;
+    -fx-background-radius: 20;
+    -fx-padding: 8 14 8 14;
+    -fx-cursor: hand;
+    -fx-font-family: "Roboto Medium", "Roboto", sans-serif;
+}
+
+.ghost-button:hover {
+    -fx-background-color: rgba(26,115,232,0.08);
+}
+
+.text-field, .password-field, .combo-box, .date-picker, .text-area {
+    -fx-background-radius: 8;
+    -fx-border-radius: 8;
+    -fx-background-color: #F8F9FA;
+    -fx-border-color: -g-border;
+    -fx-font-family: "Roboto", sans-serif;
+}
+
+.table-view {
+    -fx-background-color: -g-surface;
+    -fx-border-color: -g-border;
+    -fx-background-radius: 12;
+    -fx-border-radius: 12;
+    -fx-font-family: "Roboto", sans-serif;
+}
+
+.table-view .column-header-background {
+    -fx-background-color: #F8F9FA;
+    -fx-background-radius: 12 12 0 0;
+}
+
+.table-view .column-header .label {
+    -fx-text-fill: -g-muted;
+    -fx-font-family: "Roboto Medium", "Roboto", sans-serif;
+    -fx-font-size: 12px;
+}
+
+.table-row-cell {
+    -fx-cell-size: 32px;
+}
+
+.table-row-cell:selected {
+    -fx-background-color: -g-primary-soft;
+}
+
+.login-shell {
+    -fx-background-color: linear-gradient(to bottom, #E8F0FE, #F0F4F9 55%, #FFFFFF);
+}
+
+.login-card {
+    -fx-background-color: white;
+    -fx-background-radius: 16;
+    -fx-padding: 32 36 28 36;
+    -fx-effect: dropshadow(gaussian, rgba(60,64,67,0.18), 24, 0.16, 0, 4);
+    -fx-pref-width: 420;
+    -fx-border-color: -g-border;
+    -fx-border-radius: 16;
+    -fx-border-width: 1;
+}
+
+.login-role-chip {
+    -fx-background-color: -g-primary-soft;
+    -fx-text-fill: -g-primary;
+    -fx-background-radius: 16;
+    -fx-padding: 6 12 6 12;
+    -fx-cursor: hand;
+    -fx-font-family: "Roboto Medium", "Roboto", sans-serif;
+}
+
+.login-role-chip:hover {
+    -fx-background-color: -g-primary;
+    -fx-text-fill: white;
+}
+
+.login-brand {
+    -fx-font-size: 26px;
+    -fx-font-family: "Roboto Medium", "Roboto", sans-serif;
+    -fx-text-fill: -g-text;
+}
+
+.error-text {
+    -fx-text-fill: -g-danger;
+}
+
+.success-text {
+    -fx-text-fill: -g-success;
+}
+
+.section-title {
+    -fx-font-size: 15px;
+    -fx-font-family: "Roboto Medium", "Roboto", sans-serif;
+    -fx-text-fill: -g-text;
+}
+
+.empty-state {
+    -fx-text-fill: -g-muted;
+    -fx-font-size: 13px;
+    -fx-padding: 18 8 18 8;
+}
+
+.status-chip, .badge {
+    -fx-background-radius: 12;
+    -fx-padding: 2 9 2 9;
+    -fx-font-size: 11px;
+    -fx-font-family: "Roboto Medium", "Roboto", sans-serif;
+}
+
+.chip-neutral {
+    -fx-background-color: #E8EAED;
+    -fx-text-fill: #3C4043;
+}
+
+.chip-success {
+    -fx-background-color: #E6F4EA;
+    -fx-text-fill: -g-success;
+}
+
+.chip-danger {
+    -fx-background-color: #FCE8E6;
+    -fx-text-fill: -g-danger;
+}
+
+.chip-warn {
+    -fx-background-color: #FEF7E0;
+    -fx-text-fill: -g-warn;
+}
+
+.esi-p1 { -fx-background-color: #B3261E; -fx-text-fill: white; -fx-background-radius: 12; -fx-padding: 2 9 2 9; -fx-font-size: 11px; }
+.esi-p2 { -fx-background-color: #E37400; -fx-text-fill: white; -fx-background-radius: 12; -fx-padding: 2 9 2 9; -fx-font-size: 11px; }
+.esi-p3 { -fx-background-color: #F9AB00; -fx-text-fill: #1F1F1F; -fx-background-radius: 12; -fx-padding: 2 9 2 9; -fx-font-size: 11px; }
+.esi-p4 { -fx-background-color: #34A853; -fx-text-fill: white; -fx-background-radius: 12; -fx-padding: 2 9 2 9; -fx-font-size: 11px; }
+.esi-p5 { -fx-background-color: #1A73E8; -fx-text-fill: white; -fx-background-radius: 12; -fx-padding: 2 9 2 9; -fx-font-size: 11px; }
+
+.dsa-node {
+    -fx-background-color: -g-primary;
+    -fx-text-fill: white;
+    -fx-background-radius: 8;
+    -fx-padding: 7 9 7 9;
+    -fx-font-size: 12px;
+}
+
+.dsa-node-alt {
+    -fx-background-color: #3C4043;
+    -fx-text-fill: white;
+    -fx-background-radius: 8;
+    -fx-padding: 7 9 7 9;
+}
+
+.timeline-item {
+    -fx-padding: 7 0 7 0;
+    -fx-border-color: transparent transparent -g-border transparent;
+    -fx-border-width: 0 0 1 0;
+}
+
+.toolbar {
+    -fx-spacing: 8;
+    -fx-alignment: CENTER_LEFT;
+}
+
+.chart {
+    -fx-background-color: transparent;
+    -fx-padding: 4;
+}
+
+/* —— Dashboard ops board —— */
+.dashboard-scroll {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+
+.dashboard-scroll > .viewport {
+    -fx-background-color: transparent;
+}
+
+.dashboard-root {
+    -fx-background-color: transparent;
+}
+
+.dashboard-hero {
+    -fx-background-color: linear-gradient(to right, #FFFFFF, #EEF4FF);
+    -fx-background-radius: 18;
+    -fx-padding: 18 20 18 20;
+    -fx-effect: dropshadow(gaussian, rgba(60,64,67,0.1), 16, 0.12, 0, 2);
+    -fx-border-color: rgba(11,87,208,0.08);
+    -fx-border-radius: 18;
+    -fx-border-width: 1;
+}
+
+.dashboard-greeting {
+    -fx-font-size: 24px;
+    -fx-font-family: "Roboto Medium", "Roboto", sans-serif;
+    -fx-text-fill: -g-text;
+}
+
+.floor-chip {
+    -fx-background-radius: 14;
+    -fx-padding: 3 10 3 10;
+    -fx-font-size: 11px;
+    -fx-font-family: "Roboto Medium", "Roboto", sans-serif;
+}
+
+.floor-quiet {
+    -fx-background-color: #E6F4EA;
+    -fx-text-fill: -g-success;
+}
+
+.floor-steady {
+    -fx-background-color: -g-primary-soft;
+    -fx-text-fill: -g-primary;
+}
+
+.floor-elevated {
+    -fx-background-color: #FEF7E0;
+    -fx-text-fill: -g-warn;
+}
+
+.kpi-row {
+    -fx-alignment: CENTER_LEFT;
+}
+
+.kpi-card {
+    -fx-background-color: -g-surface;
+    -fx-background-radius: 16;
+    -fx-padding: 14 14 14 12;
+    -fx-effect: dropshadow(gaussian, rgba(60,64,67,0.1), 12, 0.12, 0, 1);
+    -fx-min-width: 140;
+}
+
+.kpi-card:hover {
+    -fx-effect: dropshadow(gaussian, rgba(11,87,208,0.18), 16, 0.16, 0, 2);
+}
+
+.kpi-accent {
+    -fx-pref-width: 4;
+    -fx-min-width: 4;
+    -fx-max-width: 4;
+    -fx-pref-height: 56;
+    -fx-background-radius: 4;
+}
+
+.kpi-accent-blue { -fx-background-color: #0B57D0; }
+.kpi-accent-warn { -fx-background-color: #E37400; }
+.kpi-accent-teal { -fx-background-color: #00897B; }
+.kpi-accent-violet { -fx-background-color: #5E35B1; }
+.kpi-accent-green { -fx-background-color: #137333; }
+
+.kpi-value {
+    -fx-font-size: 26px;
+    -fx-font-family: "Roboto Medium", "Roboto", sans-serif;
+    -fx-text-fill: -g-text;
+}
+
+.kpi-title {
+    -fx-font-size: 12.5px;
+    -fx-font-family: "Roboto Medium", "Roboto", sans-serif;
+    -fx-text-fill: -g-text;
+}
+
+.kpi-caption {
+    -fx-font-size: 11px;
+    -fx-text-fill: -g-muted;
+}
+
+.chart-panel {
+    -fx-min-height: 300;
+}
+
+.waits-list {
+    -fx-padding: 2 0 0 0;
+}
+
+.wait-row {
+    -fx-background-color: #F8FAFC;
+    -fx-background-radius: 12;
+    -fx-padding: 10 12 10 12;
+}
+
+.wait-row:hover {
+    -fx-background-color: -g-primary-soft;
+}
+
+.wait-code {
+    -fx-font-family: "Roboto Medium", "Roboto", sans-serif;
+    -fx-font-size: 13px;
+    -fx-text-fill: -g-text;
+}
+
+.wait-patient {
+    -fx-font-size: 11.5px;
+    -fx-text-fill: -g-muted;
+}
+
+.wait-minutes {
+    -fx-font-family: "Roboto Medium", "Roboto", sans-serif;
+    -fx-font-size: 13px;
+    -fx-text-fill: -g-warn;
+    -fx-min-width: 40;
+}
+
+.dashboard-table {
+    -fx-background-radius: 12;
+}
+
+.quick-actions-panel {
+    -fx-padding: 14 16 16 16;
+}
+
+.quick-actions {
+    -fx-alignment: CENTER_LEFT;
+}

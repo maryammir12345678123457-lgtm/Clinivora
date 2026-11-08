@@ -1,0 +1,86 @@
+.root {
+    -g-primary: #8AB4F8;
+    -g-primary-hover: #AECBFA;
+    -g-primary-soft: #394457;
+    -g-link: #8AB4F8;
+    -g-canvas: #1B1B1F;
+    -g-surface: #2B2B30;
+    -g-border: #44474E;
+    -g-text: #E3E3E8;
+    -g-muted: #A9ABB0;
+    -g-danger: #F2B8B5;
+    -g-success: #6DD58C;
+    -g-warn: #FDD663;
+    -g-sidebar: #202124;
+    -g-nav-hover: #3C4043;
+    -g-input-bg: #303134;
+}
+
+.sidebar {
+    -fx-background-color: -g-sidebar;
+    -fx-border-color: transparent -g-border transparent transparent;
+}
+
+.brand-title, .page-title, .section-title, .login-brand {
+    -fx-text-fill: -g-text;
+}
+
+.nav-button {
+    -fx-text-fill: #E8EAED;
+}
+
+.nav-button:hover {
+    -fx-background-color: -g-nav-hover;
+    -fx-text-fill: white;
+}
+
+.nav-button.active {
+    -fx-background-color: -g-primary-soft;
+    -fx-text-fill: -g-primary;
+}
+
+.topbar, .card, .panel, .stat-card, .kpi-card, .login-card, .table-view, .dashboard-hero {
+    -fx-background-color: -g-surface;
+    -fx-border-color: -g-border;
+}
+
+.root-pane, .main-shell {
+    -fx-background-color: linear-gradient(to bottom, #202124 0%, -g-canvas 40%, -g-canvas 100%);
+}
+
+.wait-row {
+    -fx-background-color: #35363A;
+}
+
+.kpi-value, .dashboard-greeting, .wait-code {
+    -fx-text-fill: -g-text;
+}
+
+.topbar {
+    -fx-background-color: rgba(43,43,48,0.92);
+}
+
+.login-shell {
+    -fx-background-color: linear-gradient(to bottom right, #121316, #1F1F24 55%, #243447);
+}
+
+.text-field, .password-field, .combo-box, .date-picker, .text-area {
+    -fx-background-color: -g-input-bg;
+    -fx-border-color: -g-border;
+    -fx-text-fill: -g-text;
+    -fx-prompt-text-fill: -g-muted;
+}
+
+.table-view .column-header-background {
+    -fx-background-color: #35363A;
+}
+
+.primary-button, .button {
+    -fx-background-color: -g-primary;
+    -fx-text-fill: #202124;
+}
+
+.secondary-button {
+    -fx-background-color: #3C4043;
+    -fx-text-fill: -g-text;
+}

@@ -1,0 +1,47 @@
+.root {
+    -g-primary: #7C4DFF;
+    -g-primary-hover: #651FFF;
+    -g-primary-soft: #E8DEF8;
+    -g-link: #00BFA5;
+    -g-canvas: #F3F0FF;
+    -g-surface: #FFFFFF;
+    -g-border: #D1C4E9;
+    -g-text: #1A237E;
+    -g-muted: #5C6BC0;
+    -g-danger: #FF5252;
+    -g-success: #00C853;
+    -g-warn: #FFD600;
+    -g-sidebar: #FFFFFF;
+    -g-nav-hover: #EDE7F6;
+    -g-input-bg: #FFFFFF;
+}
+
+.login-shell {
+    -fx-background-color: linear-gradient(to bottom right, #7C4DFF, #00BFA5 55%, #FFD600 120%);
+}
+
+.nav-button.active {
+    -fx-background-color: linear-gradient(to right, #E8DEF8, #B2DFDB);
+    -fx-text-fill: #4527A0;
+}
+
+.primary-button, .button {
+    -fx-background-color: linear-gradient(to right, #7C4DFF, #00BFA5);
+    -fx-text-fill: white;
+}
+
+.stat-card {
+    -fx-border-color: #B39DDB;
+}
+
+.stat-value, .kpi-value {
+    -fx-text-fill: #6200EA;
+}
+
+.dashboard-hero {
+    -fx-background-color: linear-gradient(to right, #FFFFFF, #E8DEF8 55%, #E0F2F1);
+}
+
+.root-pane, .main-shell {
+    -fx-background-color: linear-gradient(to bottom, #E8DEF8 0%, -g-canvas 34%, -g-canvas 100%);
+}

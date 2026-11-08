@@ -1,0 +1,18 @@
+/* Google light (default accent values also in app.css) */
+.root {
+    -g-primary: #0B57D0;
+    -g-primary-hover: #0842A0;
+    -g-primary-soft: #D3E3FD;
+    -g-link: #1A73E8;
+    -g-canvas: #F0F4F9;
+    -g-surface: #FFFFFF;
+    -g-border: #DADCE0;
+    -g-text: #1F1F1F;
+    -g-muted: #5F6368;
+    -g-danger: #B3261E;
+    -g-success: #137333;
+    -g-warn: #E37400;
+    -g-sidebar: #FFFFFF;
+    -g-nav-hover: #E8EAED;
+    -g-input-bg: #FFFFFF;
+}

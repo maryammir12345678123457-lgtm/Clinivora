@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox fx:controller="com.Clinivora.ui.SettingsController"
+      spacing="14"
+      xmlns:fx="http://javafx.com/fxml">
+    <Label fx:id="titleLabel" text="Appearance &amp; language" styleClass="section-title"/>
+    <Label fx:id="hintLabel" styleClass="muted"
+           text="Theme and language apply immediately and are remembered next time you open Clinivora."
+           wrapText="true"/>
+    <VBox styleClass="card" spacing="12">
+        <GridPane hgap="14" vgap="12">
+            <padding>
+                <Insets top="4" right="4" bottom="4" left="4"/>
+            </padding>
+            <Label fx:id="themeLabel" text="Theme" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+            <ComboBox fx:id="themeBox" prefWidth="260" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+            <Label fx:id="languageLabel" text="Language" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+            <ComboBox fx:id="languageBox" prefWidth="260" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+        </GridPane>
+        <HBox spacing="8">
+            <Button fx:id="applyButton" text="Apply" styleClass="primary-button" onAction="#onApply"/>
+        </HBox>
+        <Label fx:id="statusLabel" styleClass="success-text"/>
+    </VBox>
+</VBox>

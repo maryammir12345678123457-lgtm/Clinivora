@@ -1,0 +1,16 @@
+﻿Clinivora on USB
+================
+Folder: F:\Clinivora
+
+Requires on the PC: JDK 21 + Maven.
+
+PowerShell:
+  $env:JAVA_HOME = "C:\Program Files\Eclipse Adoptium\jdk-21.0.12.101-hotspot"
+  $env:Path = "$env:JAVA_HOME\bin;C:\Tools\apache-maven-3.9.6\bin;" + $env:Path
+  cd F:\Clinivora
+  mvn javafx:run
+
+Login: admin / AdminDemo!2026
+
+Presentation notes: docs\Progress_Presentation_Brief.md
+Note: build folder (target) was not copied; first run will download deps and compile.

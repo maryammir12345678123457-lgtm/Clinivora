@@ -1,0 +1,5 @@
+﻿Run this project
+===============
+Double-click: Clinivora.exe
+
+Keep the 'app' and 'runtime' folders next to the .exe (do not delete them).

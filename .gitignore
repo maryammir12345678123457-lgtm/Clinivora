@@ -22,3 +22,23 @@
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 replay_pid*
+
+# Build output and local IDE files
+target/
+dist/
+runtime/
+.idea/
+*.iml
+.classpath
+.project
+.settings/
+.vscode/
+
+# Local database
+data/*.db
+data/*.db-journal
+data/*.db-wal
+data/*.db-shm
+
+.DS_Store
+Thumbs.db

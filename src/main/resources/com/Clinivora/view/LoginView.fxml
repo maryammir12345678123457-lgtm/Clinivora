@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<StackPane fx:controller="com.Clinivora.ui.LoginController"
+           styleClass="login-shell"
+           xmlns:fx="http://javafx.com/fxml">
+    <VBox alignment="CENTER" spacing="16">
+        <VBox styleClass="login-card" spacing="10" alignment="CENTER_LEFT">
+            <HBox spacing="12" alignment="CENTER_LEFT">
+                <ImageView fitWidth="52" fitHeight="52" preserveRatio="true">
+                    <image>
+                        <Image url="@/images/clinivora-logo.png"/>
+                    </image>
+                </ImageView>
+                <VBox spacing="2">
+                    <Label fx:id="brandLabel" text="Clinivora" styleClass="login-brand"/>
+                    <Label fx:id="subtitleLabel" text="Emergency Desk Operations" styleClass="subtitle"/>
+                </VBox>
+            </HBox>
+            <Label fx:id="signInLabel" text="Sign in to continue"/>
+            <TextField fx:id="usernameField" promptText="Username"/>
+            <PasswordField fx:id="passwordField" promptText="Password"/>
+            <HBox spacing="8">
+                <ComboBox fx:id="themeBox" prefWidth="160" promptText="Theme"/>
+                <ComboBox fx:id="languageBox" prefWidth="180" promptText="Language"/>
+            </HBox>
+            <Button fx:id="loginButton" text="Sign in" onAction="#onLogin" defaultButton="true"
+                    maxWidth="Infinity" styleClass="primary-button"/>
+            <Label fx:id="messageLabel" styleClass="error-text"/>
+            <Label fx:id="demoHintLabel" text="Click a role to fill the form" styleClass="muted"/>
+            <HBox spacing="8">
+                <Button text="Admin" styleClass="login-role-chip" onAction="#fillAdmin"/>
+                <Button text="Reception" styleClass="login-role-chip" onAction="#fillReception"/>
+                <Button text="Triage" styleClass="login-role-chip" onAction="#fillTriage"/>
+                <Button text="Doctor" styleClass="login-role-chip" onAction="#fillDoctor"/>
+            </HBox>
+            <Label fx:id="demoPassLabel" text="Then press Sign in" styleClass="muted"/>
+            <padding>
+                <Insets top="4" right="2" bottom="2" left="2"/>
+            </padding>
+        </VBox>
+    </VBox>
+</StackPane>

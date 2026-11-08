@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox fx:controller="com.Clinivora.ui.AccountsController"
+      spacing="12"
+      xmlns:fx="http://javafx.com/fxml">
+    <Label text="User accounts" styleClass="section-title"/>
+    <VBox styleClass="card" spacing="8">
+        <Label text="Create user" styleClass="section-title"/>
+        <GridPane hgap="10" vgap="8">
+            <padding>
+                <Insets top="2" right="2" bottom="2" left="2"/>
+            </padding>
+            <Label text="Username" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+            <VBox spacing="2" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                <TextField fx:id="usernameField" promptText="e.g. nurse.day"/>
+                <Label text="3–40 chars: letters, numbers, . _ - (saved lowercase)" styleClass="muted"/>
+            </VBox>
+            <Label text="Display name" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+            <TextField fx:id="displayNameField" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+            <Label text="Role" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+            <ComboBox fx:id="roleBox" GridPane.columnIndex="1" GridPane.rowIndex="2" prefWidth="220"/>
+            <Label text="Password" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+            <VBox spacing="2" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                <PasswordField fx:id="passwordField"/>
+                <Label text="Min 8 chars with upper, lower, digit, special (e.g. NurseDemo!2026)"
+                       styleClass="muted" wrapText="true"/>
+            </VBox>
+        </GridPane>
+        <HBox spacing="8">
+            <Button text="Create user" styleClass="primary-button" onAction="#onCreate"/>
+            <Button text="Refresh" styleClass="secondary-button" onAction="#onRefresh"/>
+        </HBox>
+    </VBox>
+    <HBox spacing="8">
+        <Button text="Activate" styleClass="secondary-button" onAction="#onActivate"/>
+        <Button text="Deactivate" styleClass="danger-button" onAction="#onDeactivate"/>
+        <Button text="Reset password" styleClass="ghost-button" onAction="#onResetPassword"/>
+    </HBox>
+    <TableView fx:id="userTable" prefHeight="320">
+        <placeholder>
+            <Label text="No users found." styleClass="empty-state"/>
+        </placeholder>
+        <columns>
+            <TableColumn fx:id="usernameCol" text="Username" prefWidth="140"/>
+            <TableColumn fx:id="displayCol" text="Display name" prefWidth="180"/>
+            <TableColumn fx:id="roleCol" text="Role" prefWidth="110"/>
+            <TableColumn fx:id="activeCol" text="Active" prefWidth="90"/>
+        </columns>
+    </TableView>
+</VBox>
